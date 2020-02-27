@@ -1,0 +1,13 @@
+language: go
+go:
+  - "1.13.7"
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE users;'
+env:
+    - APP_PORT=":50051"
+    - DATABASE_HOST=127.0.0.1
+    - DATABASE_PORT=3306
+    - DATABASE_USER=root
+    - DATABASE_PASS=""

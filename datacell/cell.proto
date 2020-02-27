@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package datacell;
+
+option go_package = "datacell";
+
+message getLatestDataCellRequest {
+    string DataSource = 1;
+    string RowKey = 2;
+    string ColumnKey = 3;
+}
+
+message getDataCellRequest {
+    string DataSource = 1;
+    string RowKey = 2;
+    string ColumnKey = 3;
+    int64 RefKey = 4;
+}
+
+message getDataCellResponse {
+    string AddedID = 1;
+    string RowKey = 2;
+    string ColumnKey = 3;
+    int64 RefKey = 4;
+    string Body = 5;
+    string CreatedAt = 6;
+}
+
+message putDataCellRequest {
+    string DataSource = 1;
+    string RowKey = 2;
+    string ColumnKey = 3;
+    string Body = 4;
+}
+
+service dataCellService {
+    rpc GetLatestDataCell(getLatestDataCellRequest) returns (getDataCellResponse) {};
+    rpc GetDataCell(getDataCellRequest) returns (getDataCellResponse) {};
+    rpc PutDataCell(putDataCellRequest) returns (getDataCellResponse) {};
+}
