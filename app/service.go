@@ -49,7 +49,7 @@ func (s *Server) GetLatestDataCell(ctx context.Context, request *datacell.GetLat
 		ColumnKey: dc.ColumnKey,
 		RefKey:    dc.RefKey,
 		Body:      string(js),
-		CreatedAt: dc.CreatedAt.Format(time.RFC3339),
+		CreatedAt: dc.CreatedAt.UTC().Format(time.RFC3339),
 	}, nil
 }
 
@@ -85,7 +85,7 @@ func (s *Server) GetDataCell(ctx context.Context, request *datacell.GetDataCellR
 		ColumnKey: dc.ColumnKey,
 		RefKey:    dc.RefKey,
 		Body:      string(js),
-		CreatedAt: dc.CreatedAt.Format(time.RFC3339),
+		CreatedAt: dc.CreatedAt.UTC().Format(time.RFC3339),
 	}, nil
 }
 
@@ -129,7 +129,7 @@ func (s *Server) PutDataCell(ctx context.Context, request *datacell.PutDataCellR
 		ColumnKey: dc.ColumnKey,
 		RefKey:    dc.RefKey,
 		Body:      string(js),
-		CreatedAt: dc.CreatedAt.Format(time.RFC3339),
+		CreatedAt: dc.CreatedAt.UTC().Format(time.RFC3339),
 	}, nil
 }
 
