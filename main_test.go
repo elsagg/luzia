@@ -105,7 +105,7 @@ func TestGetDataCell(t *testing.T) {
 				ColumnKey: "BASIC_INFO",
 				RefKey:    2,
 				Body:      "{\"first_name\":\"Zelda\",\"last_name\":\"Princess\"}",
-				CreatedAt: "2018-11-27T16:38:13Z",
+				CreatedAt: "2018-11-27T14:38:13Z",
 			},
 		},
 		{
@@ -121,7 +121,7 @@ func TestGetDataCell(t *testing.T) {
 				ColumnKey: "ADDRESS",
 				RefKey:    1,
 				Body:      "{\"street\":\"Sunset Boullevard\",\"zip\":105245621}",
-				CreatedAt: "2018-11-26T15:14:38Z",
+				CreatedAt: "2018-11-26T13:14:38Z",
 			},
 		},
 	}
@@ -165,7 +165,7 @@ func TestGetLatestDataCell(t *testing.T) {
 				ColumnKey: "BASIC_INFO",
 				RefKey:    2,
 				Body:      "{\"first_name\":\"Zelda\",\"last_name\":\"Princess\"}",
-				CreatedAt: "2018-11-27T16:38:13Z",
+				CreatedAt: "2018-11-27T14:38:13Z",
 			},
 		},
 		{
@@ -180,7 +180,7 @@ func TestGetLatestDataCell(t *testing.T) {
 				ColumnKey: "ADDRESS",
 				RefKey:    2,
 				Body:      "{\"street\":\"Somewhere Inhell\",\"zip\":256255254}",
-				CreatedAt: "2018-11-26T15:18:38Z",
+				CreatedAt: "2018-11-26T13:18:38Z",
 			},
 		},
 	}
