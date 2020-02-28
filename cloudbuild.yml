@@ -1,19 +1,8 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    entrypoint: 'bash'
-    args:
-    - '-c'
-    - |
-      docker pull gcr.io/$PROJECT_ID/luzia:latest || exit 0
-  - name: 'gcr.io/cloud-builders/docker'
-    args: [
-            'build',
-            '-t', 'gcr.io/$PROJECT_ID/luzia:latest',
-            '--cache-from', 'gcr.io/$PROJECT_ID/luzia:latest',
-            '.'
-          ]
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/luzia', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/luzia']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['beta', 'run', 'deploy', 'luzia-$BRANCH_NAME', '--no-allow-unauthenticated', '--image', 'gcr.io/$PROJECT_ID/luzia', '--region', 'us-east1','--platform', 'managed', '--quiet']
-  images: ['gcr.io/$PROJECT_ID/luzia:latest']
+  images: ['gcr.io/$PROJECT_ID/luzia']
