@@ -15,5 +15,5 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/luzia']
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', 'run', 'deploy', '$BRANCH_NAME-luzia', '--no-allow-unauthenticated', '--image', 'gcr.io/$PROJECT_ID/luzia', '--region', 'us-east1','--platform', 'managed', '--quiet']
+    args: ['beta', 'run', 'deploy', 'luzia_$BRANCH_NAME', '--no-allow-unauthenticated', '--image', 'gcr.io/$PROJECT_ID/luzia', '--region', 'us-east1','--platform', 'managed', '--quiet']
   images: ['gcr.io/$PROJECT_ID/luzia:latest']
